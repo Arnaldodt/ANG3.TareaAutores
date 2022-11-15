@@ -1,0 +1,25 @@
+<h1>Favorite authors</h1>
+
+<a [routerLink]="['/Crea']">Add an author</a>
+
+<h3>We Hace quotes by:</h3>
+<table>
+    <tr>
+      <th>Author</th>
+      <th>Actions Avallable</th>
+    </tr>
+    <tr *ngIf="mesaje1!='*'">
+      <td colspan="2">
+          No existen Autores
+      </td>
+    </tr>
+    <tr *ngFor="let x of AUT" #muestra>
+      <td>
+        {{x.nombre}}
+      </td>
+      <td>
+        <button (click)="Busca(x._id)">Edit</button>
+        <button (click)="Elimina(x._id)">Delete</button>
+      </td>
+    </tr>
+  </table>

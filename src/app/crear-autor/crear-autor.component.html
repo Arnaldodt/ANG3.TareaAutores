@@ -1,0 +1,10 @@
+<h1>Favorite authors</h1>
+
+<a [routerLink]="['/']">Home</a>
+
+<h3>Add a new author:</h3>
+<form method="post" (submit)="Crea()">
+  <label for="nombre">Nombre</label><br>
+  <input type="text" name="nombre" id="nombre" [placeholder]="Mesnaje2" [(ngModel)]="nombre">{{mensaje_back}}<br>
+  <button type="button" [routerLink]="['/']">Cancel</button><button type="submit">Enviar</button>
+</form>
