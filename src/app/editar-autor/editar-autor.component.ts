@@ -56,7 +56,7 @@ export class EditarAutorComponent implements OnInit {
     {
       this.Mesnaje3="Debe Ingresar el nombre"
     } else {
-      this.AUT2 = {_id:"",nombre:this.Enombre}
+      this.AUT2 = {_id:"",nombre:this.Enombre, citas:[]}
       let obs = this._HttpService.Actualiza(this.Eid,this.AUT2);
       obs.subscribe((data) =>{
         if (data.existen==='0'){

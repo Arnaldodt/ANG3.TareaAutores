@@ -35,6 +35,10 @@ export class ListaComponent implements OnInit {
         console.log(data.error)
     })
   }
+  
+  Quotes(id:string){
+    this._router.navigate(['Citas/' + id]);
+  }
 
   Busca(id:string){
     this._router.navigate(['Editar/' + id]);

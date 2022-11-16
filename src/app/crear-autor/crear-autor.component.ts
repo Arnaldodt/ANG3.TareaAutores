@@ -26,7 +26,7 @@ export class CrearAutorComponent implements OnInit {
     {
       this.Mesnaje2="Debe Ingresar el nombre"
     } else {
-      this.AUT2 = {_id:"",nombre:this.nombre}
+      this.AUT2 = {_id:"",nombre:this.nombre, citas:[]}
       let obs = this._HttpService.Crea(this.AUT2);
       obs.subscribe((data) =>{
         if (data.existen==='0'){

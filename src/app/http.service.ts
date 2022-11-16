@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Autores, Autor } from "./autores";
+import { Autores, Autor, Cita } from "./autores";
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -34,4 +34,25 @@ export class HttpService {
     let URL = `${environment.urlAPI}/EAutor/${id}`
     return this._http.delete<Autores>(URL)
   }
+
+  CreaCita(id:string,cit: Cita){
+    let URL = `${environment.urlAPI}/CCita/${id}`
+    return this._http.post<Autores>(URL,cit)
+  }
+  EliminaCita(id_AUT:string, id_CIT:string){
+    let URL = `${environment.urlAPI}/ECita/${id_AUT}-${id_CIT}`
+    return this._http.delete<Autores>(URL)
+  }
+  ActualizaCitaVoto(id_AUT:string, id_CIT:string,accion:string){
+    let URL:string=""
+
+    if (accion ==='+')
+      {URL = `${environment.urlAPI}/ACitaVoto/${id_AUT}-${id_CIT}`}
+
+    if (accion ==='-')
+       URL = `${environment.urlAPI}/DCitaVoto/${id_AUT}-${id_CIT}`
+
+    return this._http.put<Autores>(URL,{})
+  }
+
 }

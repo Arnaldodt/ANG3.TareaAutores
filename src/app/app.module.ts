@@ -9,6 +9,8 @@ import { CrearAutorComponent } from './crear-autor/crear-autor.component';
 import { EditarAutorComponent } from './editar-autor/editar-autor.component';
 import { ListaComponent } from './lista/lista.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CitasComponent } from './citas/citas.component';
+import { AddcitasComponent } from './addcitas/addcitas.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CrearAutorComponent,
     EditarAutorComponent,
     ListaComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CitasComponent,
+    AddcitasComponent
   ],
   imports: [
     BrowserModule,

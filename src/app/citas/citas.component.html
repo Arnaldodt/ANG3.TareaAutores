@@ -1,0 +1,36 @@
+<h1>Favorite authors</h1>
+
+<a [routerLink]="['/']">Home</a>  <span *ngIf="(!muestraMens)">::</span> <a [routerLink]="['AddCitas']" *ngIf="(!muestraMens)">Add a quotes</a>
+
+<h3 *ngIf="(muestraMens)">
+  Lo sentimos, pero no se pudo encontrar al autor que estás buscando. ¿Te gustaría agregar este autor a nuestra base de datos, presione <a [routerLink]="['/Crea']">aqui</a>?
+</h3>
+
+<div *ngIf="!(muestraMens)">
+  <h3>Quotes by {{Enom_AUT}}:</h3>
+  <table>
+      <tr>
+        <th>Quotes</th>
+        <th>Votes</th>
+        <th>  Actions Avallable</th>
+      </tr>
+      <tr *ngIf="!(Mensaje=='*')">
+        <td colspan="3">
+            No existen Citas
+        </td>
+      </tr>
+      <tr *ngFor="let x of CITA">
+        <td>
+          {{x.cita}}
+        </td>
+        <td>
+          {{x.votos}}
+        </td>
+        <td>
+          <button (click)="Quotes(x._id,'+')">Vote Up</button>
+          <button (click)="Quotes(x._id,'-')">Vote Dpwn</button>
+          <button (click)="Elimina(x._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
